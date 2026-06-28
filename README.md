@@ -185,3 +185,4 @@ $ go test -v github.com/majd/ipatool/...
 ## License
 
 IPATool is released under the [MIT license](https://github.com/majd/ipatool/blob/main/LICENSE).
+
