@@ -1,6 +1,8 @@
 name: Dry Build
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
     branches:
       - main
@@ -23,6 +25,11 @@ jobs:
         env:
           GOOS: windows
           GOARCH: ${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.arch }}
+          path: ./*
+          retention-days: 2
   build_linux:
     name: Build for Linux
     runs-on: ${{ matrix.runner }}
